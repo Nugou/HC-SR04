@@ -3,7 +3,7 @@
 This library of easy access provides comands to receive all that module HC-SR04 offers.
 
 
-# Installacion
+# Installation
 
 To install, download and extract to the folder 'libraries' of arduino(C:\Program Files (x86)\Arduino\libraries\), done; 
 
@@ -15,8 +15,8 @@ Instance: ULTRAX MYULTRA(int, int); -> Instance with the port echo and trigger;
 
 To receive the distance of module, use comands: 
 
-* *.getDistance(); -> Return distance in millimeters;
-* *.getDistance_M(); -> Return distance in meters;
+* *.getDistance_MM(); -> Return distance in millimeters;
+* *.getDistance_ME(); -> Return distance in meters;
 * *.getDistance_CM(); -> Return distance in centimeters;
 * *.getDistance_IN(); -> Return distance in inch;
 
@@ -44,6 +44,10 @@ The force of motors can be controlled with comands bellow;
 
 * *.setMinPower(int); -> (int = 0 - 255, values analog). default: 0;
 * *.setMaxPower(int); -> (int = 0 - 255, values analog). default: 255;
+
+To disable a kind of alert(Motor, bip or alert) use the comand bellow:
+
+* *.disableCOM(int); -> (int = MOTOR or int = BIP or int = ALERT);
 
 
 # Tips

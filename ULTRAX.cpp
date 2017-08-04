@@ -17,27 +17,27 @@ ULTRAX::ULTRAX(int echo, int trigger){
 	pinEcho = echo;
 	pinTrigger = trigger;
 	lastCompute = 0;
-	timeCompute = 5;
+	timeCompute = 10;
 	minDistance = 0;
 	maxDistance = 4000;
 	ePowerMin = 0;
 	ePowerMax = 255;
+	
 }
 
-double ULTRAX::getDistance(){
+double ULTRAX::getDistance_MM(){
 	if(lastCompute <= millis()){
 		lastCompute += timeCompute;
-		
-		for(int i = 2; i < 11; i += 8){
-			digitalWrite(pinTrigger, !digitalRead(pinTrigger);
+		digitalWrite(pinTrigger, LOW);
+		for(int i = 10; i > -1; i -= 10){
+			digitalWrite(pinTrigger, !digitalRead(pinTrigger));
 			delayMicroseconds(i);
 		}
 		
-		duration = pulseIn(pinEcho, HIGH);
+		duration = pulseIn(pinEcho,HIGH);
 		distance = duration / 294.1176470588235 / 2.0;
 		
 		if(distance > minDistance && distance < maxDistance && eBip){
-			bipActive = false;
 			tone(pinBip, 440);
 			delay(duration / 15.0);
 			noTone(pinBip);
@@ -54,7 +54,6 @@ double ULTRAX::getDistance(){
 			digitalWrite(pinAlert, LOW);
 		}
 	}
-	
 	return distance;
 }
 
@@ -77,6 +76,16 @@ void ULTRAX::enableAlert(int _pinAlert){
 	eMotor = false;
 	eBip = false;
 	eAlert = true;
+}
+
+void ULTRAX::disableCOM(int com){
+	if(MOTOR == com){
+		eMotor = false;
+	}else if(BIP == com){
+		eBip = false;
+	}else if(ALERT == com){
+		eAlert = false;
+	}
 }
 
 void ULTRAX::setMinDistance(double _minDistance){
@@ -103,14 +112,14 @@ void ULTRAX::setMaxPower(int maxPower){
 	}
 }
 
-double ULTRAX::getDistance_M(){
-	return getDistance() / 1000.0;
+double ULTRAX::getDistance_ME(){
+	return getDistance_MM() / 1000.0;
 }
 
 double ULTRAX::getDistance_CM(){
-	return getDistance() / 10.0;
+	return getDistance_MM() / 10.0;
 }
 
 double ULTRAX::getDistance_IN(){
-	return getDistance() / 0.0393701;
+	return getDistance_MM() / 0.0393701;
 }

@@ -18,8 +18,8 @@ setMinDistance	KEYWORD2
 setMaxDistance	KEYWORD2
 setMinPower		KEYWORD2
 setMaxPower		KEYWORD2
-getDistance		KEYWORD2
 getDistance_MM	KEYWORD2
+getDistance_ME	KEYWORD2
 getDistance_CM	KEYWORD2
 getDistance_IN	KEYWORD2
 
@@ -27,3 +27,6 @@ getDistance_IN	KEYWORD2
 #######################################
 # Constants (LITERAL1)
 #######################################
+MOTOR	LITERAL1
+BIP		LITERAL1
+ALERT	LITERAL1

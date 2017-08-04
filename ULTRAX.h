@@ -24,11 +24,16 @@ class ULTRAX {
 		void setMaxDistance(double);
 		void setMinPower(int);
 		void setMaxPower(int);
+		void disableCOM(int);
 		
-		double getDistance();
-		double getDistance_M();
+		double getDistance_MM();
+		double getDistance_ME();
 		double getDistance_CM();
 		double getDistance_IN();
+		
+		const int MOTOR = 0;
+		const int BIP = 1;
+		const int ALERT = 2;
 		
 };
 #endif

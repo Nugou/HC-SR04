@@ -3,7 +3,7 @@
 This library of easy access provides comands to receive all that module HC-SR04 offers.
 
 
-# Installacion
+# Installation
 
 To install, download and extract to the folder 'libraries' of arduino(C:\Program Files (x86)\Arduino\libraries\), done; 
 

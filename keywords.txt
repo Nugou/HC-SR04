@@ -14,14 +14,14 @@ ULTRAX	KEYWORD1
 enableMotor		KEYWORD2
 enableBip		KEYWORD2
 enableAlert		KEYWORD2
-setMinDistance	KEYWORD2
-setMaxDistance	KEYWORD2
+setMinDistance		KEYWORD2
+setMaxDistance		KEYWORD2
 setMinPower		KEYWORD2
 setMaxPower		KEYWORD2
 getDistance		KEYWORD2
-getDistance_MM	KEYWORD2
-getDistance_CM	KEYWORD2
-getDistance_IN	KEYWORD2
+getDistance_M		KEYWORD2
+getDistance_CM		KEYWORD2
+getDistance_IN		KEYWORD2
 
 
 #######################################

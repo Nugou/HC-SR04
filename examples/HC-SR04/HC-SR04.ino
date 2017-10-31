@@ -9,5 +9,5 @@ void setup(){
    
 void loop(){ 
 	Serial.print("Distancia em centimetros: ");
-	Serial.println(ULTRA.getDistance_MM());//Recebe a distancia em centimetros
+	Serial.println(ULTRA.getDistance_M());//Recebe a distancia em centimetros
 }  
